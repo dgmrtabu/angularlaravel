@@ -1,1 +1,40 @@
-<p>products works!</p>
+<form (ngSubmit)="insertData()">
+    <div class="form-group">
+        <label for="reference">Referencia</label>
+        <input type="text" name="reference" class="text form-control" [(ngModel)]="product.reference">
+    </div>
+    <div class="form-group">
+        <label for="description">Descripcion</label>
+        <input type="text" name="description" class="text text form-control" [(ngModel)]="product.description">
+    </div>
+    <div class="form-group">
+        <label for="quatite">Cantidad</label>
+        <input type="text" name="quatite" class="text text form-control" [(ngModel)]="product.quatite">
+    </div>
+    <div class="form-group">
+        <label for="prix">Precio</label>
+        <input type="text" name="prix" class="text text form-control" [(ngModel)]="product.prix">
+    </div>
+    <button class="btn btn-dark btn sm mt-4">Validar</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Referencia</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of products">
+            <th scope="row">{{prod.id}}</th>
+            <td >{{prod.reference}}</td>
+            <td >{{prod.description}}</td>
+            <td >{{prod.quatite}}</td>
+            <td >{{prod.prix}}</td>
+        </tr>
+    </tbody>
+</table>
